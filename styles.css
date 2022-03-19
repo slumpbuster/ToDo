@@ -23,7 +23,7 @@ code {
 }
 
 .todo-list{
-  background: #e8e8e8;
+  background: 	#D3D3D3;
   border-radius: 4px;
   padding: 5px;
   max-width: 600px;
@@ -40,6 +40,11 @@ code {
   justify-content: space-between;
 }
 
+.todo:hover {
+  background-color: #E8E8E8;
+  cursor: pointer;
+}
+
 .input{
   width: 100%;
   box-sizing: border-box;
@@ -49,16 +54,31 @@ code {
   padding: 1rem;
   height: 2.25em;
   font-size: 18px;
+  color:#fff;
+  background-color: #989898;
 }
 
-.lblTodo {
+::placeholder {
+  color: #fff;
+}
+
+label {
   text-align: left;
   font-size: 18px;
   width: 500px;
 }
-.lblTodo-strike {
-  text-align: left;
-  font-size: 18px;
+
+.lbl1 {
+  color: #ffba00;
+}
+.lbl2 {
+  color: #ff4500;
+}
+.lbl3 {
+  color: #ae2029;
+}
+
+input[type=checkbox]:checked + label {
   text-decoration: line-through;
-  width: 500px;
+  color: green;
 }

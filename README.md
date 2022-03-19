@@ -42,6 +42,18 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 
 ---------
 
+## Improvements Made
+- 2022-03-19: Added prioirty with toggle on click of todo text/ Light-Orange, Dark-Orange, Dark-Red
+- 2022-03-19: Added changing of todo text to green when completed
+- 2022-03-19: Added slight gray hover over todo item
+- 2022-03-19: Changed input box to gray and text to white
+
+## Roadmap of Future Improvements
+- Store todo to a file to be saved and reloaded
+
+---------
+
+
 ## Contributing 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
