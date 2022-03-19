@@ -1,5 +1,5 @@
 # ToDo List
-<img src="./ToDo.png" height="200px" width="300px"/>
+<img src="./ToDo.png" height="200px" width="400px"/>
 
 ## Description 
 This is a simple Todo List Application using react to create and manage a todo list. There are options to mark an item complete, as well as unmark the item, and the ability to add and delete items from the list.
