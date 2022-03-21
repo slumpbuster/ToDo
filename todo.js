@@ -9,11 +9,26 @@ function Todo({todo,index,remove,complete,priority}){
     priority(index);
   }
 
+  const checkBox = ((todo, index) => {
+    console.log(todo, index)
+    if (todo.isCompleted) {
+      return (
+        <input id={`cbx${index}`} type="checkbox" checked onClick={cboxClick}></input>
+      );
+    } else {
+      return (
+        <input id={`cbx${index}`} type="checkbox" onClick={cboxClick}></input>
+      );
+    }
+  });
   return (
     <div className="todo">
-      <input type="checkbox" onClick={cboxClick}></input>
-      <label id={`lbl${index}`} className={`lbl${todo.priority}`} onClick={lblClick}>{todo.text}</label>
-      <button type="button" className="btn btn-default btn-sm" onClick={btnClick}>
+      <label className="checkbox">
+        {checkBox(todo, index)}
+        <span></span>
+      </label>
+      <label id={`lbl${index}`} className={`label lbl${todo.priority}`} onClick={lblClick}>{todo.text}</label>
+      <button type="button" className="btn btn-dark btn-sm" onClick={btnClick}>
         <span className="glyphicon glyphicon-trash"></span>
       </button>
     </div>

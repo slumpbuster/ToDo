@@ -27,17 +27,26 @@ function App(){
     setTodos(temp);
   }
   const completeTodo = index => {
+    console.log(document.getElementById(`cbx${index}`));
+    document.getElementById(`cbx${index}`).checked = false;
     let temp = [...todos];
     temp[index].isCompleted = !temp[index].isCompleted;
+    if (temp[index].isCompleted) {
+      temp[index].priority = 0;
+    } else {
+      temp[index].priority = 1;
+    }
     setTodos(temp);
   }
   const changePriotiy = index => {
     let temp = [...todos];
-    temp[index].priority = temp[index].priority + 1;
-    if (temp[index].priority > 3) temp[index].priority = 1;
-    console.log(temp[index])
+    if (!temp[index].isCompleted) {
+      temp[index].priority = temp[index].priority + 1;
+      if (temp[index].priority > 3) temp[index].priority = 1;
+    }
     setTodos(temp);
   }
+  todos.sort((a, b) => b.priority - a.priority);
 
   return(
     <div className="app">
