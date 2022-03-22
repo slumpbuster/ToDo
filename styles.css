@@ -5,11 +5,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 h1 {
-  margin-left: 0.5em;
-  height: 5vh;
+  margin-left: 8px;
+  margin-top: 18px;
+  float: left;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden
+}
+
+.nav {
+  padding-top: 8px;
+  width: 100%;
+  height: 95px;
+  background-color: white;
+}
+.navbutton {
+  float: right;
+  margin-right: 8px;
 }
 
 code {
@@ -20,14 +38,12 @@ code {
 .app {
   background: black;
   padding: 30px;
-  height: 91.75vh;
 }
 
 .todo-list{
   background: 	#D3D3D3;
   border-radius: 4px;
   padding: 5px;
-  max-width: 95vw;
 }
 
 .todo{
@@ -88,19 +104,14 @@ code {
   cursor: pointer;
 }
 
-.btn-dark {
+.btn-round {
   color: black;
   border: 2px solid black;
   border-radius: 50%;
   background: transparent;
   transition: all 0.3s ease 0s;
 }
-.btn-dark:hover {
-  color: white;
-  background: black;
-  border: 2px solid black;
-}
-.btn-dark:focus {
+.btn-round:focus {
   color: black;
   border: 2px solid black;
   border-radius: 50%;
@@ -108,6 +119,37 @@ code {
   transition: all 0.3s ease 0s;
   outline: none;
   box-shadow: none;
+}
+.btn-round:hover {
+  color: white;
+  background: black;
+  border: 2px solid black;
+}
+
+.btn-square {
+  height: 35px;
+  width: 75px;
+  font-size: 18px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: gray;
+  transition: all 0.3s ease 0s;
+  margin: 2px;
+}
+.btn-square:focus {
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: gray;
+  transition: all 0.3s ease 0s;
+  outline: none;
+  box-shadow: none;
+}
+.btn-square:hover {
+  color: white;
+  background: black;
+  border: 2px solid gray;
 }
 
 .checkbox {
@@ -135,13 +177,13 @@ code {
   background-color: white;
   cursor: pointer;
 }
-.checkbox > input:hover {
-  background: gray;
-  border: 2px solid black;
-}
 .checkbox > input:checked {
   border: 1px solid gray;
   background-color: black;
+}
+.checkbox > input:hover {
+  background: gray;
+  border: 2px solid black;
 }
 .checkbox > input:checked + span::before {
   content: '\2713';

@@ -38,6 +38,7 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 - **/form.js** - Contains the React code to build the form to add new todo items
 - **/index.js** - Contains the React code to build the page, Render ReactDOM
 - **/styles.css** - Stylesheet file that positions objects, controls text, colors, and layout
+- **/todo.txt** - Json Data for todo list
 - **/ToDo.png** - Screenshot for ReadMe
 
 ---------
@@ -50,6 +51,8 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 - 2022-03-21: Changed look of checkbox and delete button
 - 2022-03-21: Added cursor over non-completed todo item
 - 2022-03-21: Added sort based on priority (high to low)
+- 2022-03-22: Added ability to Import file (needs to be in root *where index.html is - todo.txt)
+- 2022-03-22: Added ability to Export file (exports to download directory - todo.txt)
 
 ## Roadmap of Future Improvements
 - Store todo to a file to be saved and reloaded
