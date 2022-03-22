@@ -57,7 +57,7 @@ function App(){
     if (link != null) {
       var file = link.download;
       var rawFile = new XMLHttpRequest();
-      rawFile.open("GET", file, false); 
+      rawFile.open("GET", file, false);
       rawFile.onreadystatechange = function ()
       {
         if(rawFile.readyState === 4)

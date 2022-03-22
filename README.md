@@ -24,11 +24,13 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 - Open your browser of choice and browse to http://127.0.0.1:8080/
 
 ## How to Run 
-- When the page is loaded in your browser, you will notice 3 default entries
+- When the page is loaded in your browser, you will notice no default entries
+- If you would like to pre-load the list with entries, click on the Import button (loads data from todo.txt)
 - To complete an item: Click on the checkbox of an entry. The checkbox will be checked and the text of the todo item will be striked out
 - To uncomplete an item: Click on the checkbox of an entry. The checkbox will be unchecked and the text of the todo item will be normal
 - To delete an item: Click on the trashcan button next to the item you want to remove. The item will be removed.
 - To add an item: start typing in the input field at the bottom of the form and hit enter. The new todo item will be added to the bottom of your list
+- To export your todo list to a file (todo.txt in your download directory), click on the Export button. If you want to be able to then reload this file, you need to copy the todo.txt from your download directory to your root directory where you are running your HTTP Server (where index.html is located)
 
 ---------
 
@@ -51,7 +53,7 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 - 2022-03-21: Changed look of checkbox and delete button
 - 2022-03-21: Added cursor over non-completed todo item
 - 2022-03-21: Added sort based on priority (high to low)
-- 2022-03-22: Added ability to Import file (needs to be in root *where index.html is - todo.txt)
+- 2022-03-22: Added ability to Import file (needs to be in root directory where your HTTP Server is running from *where index.html is - todo.txt)
 - 2022-03-22: Added ability to Export file (exports to download directory - todo.txt)
 
 ## Roadmap of Future Improvements
