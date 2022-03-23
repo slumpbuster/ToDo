@@ -2,8 +2,8 @@ function Todo({todo,index,remove,complete,priority}){
   function btnClick(){
     remove(index);
   }
-  function cboxClick(){
-    complete(index);
+  function cboxClick(event){
+    complete(event, index);
   }
   function lblClick(){
     priority(index);
@@ -12,7 +12,7 @@ function Todo({todo,index,remove,complete,priority}){
   return (
     <div key={`todo${index}`} id={`todo${index}`} className="todo">
       <label className="checkbox">
-        <input id={`cbx${index}`} type="checkbox" checked={todo.isCompleted} onChange={()=>{}} onClick={cboxClick}></input>
+        <input id={`cbx${index}`} type="checkbox" checked={todo.isCompleted} onChange={(event)=>{cboxClick(event)}}></input>
         <span></span>
       </label>
       <label id={`lbl${index}`} className={`label lbl${todo.priority}`} onClick={lblClick}>{todo.text}</label>

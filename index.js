@@ -1,22 +1,7 @@
 function App(){
   const [todos, setTodos] = React.useState([]);
-  /*const [todos, setTodos] = React.useState([{
-      text: 'learn react',
-      isCompleted: false,
-      priority: 3
-    },
-    {
-      text: 'meet friend for lunch',
-      isCompleted: false,
-      priority: 1
-    },
-    {
-      text: 'build todo app',
-      isCompleted: false,
-      priority: 2
-    }
-  ]);*/
   const todoJson = document.getElementById('todoJson');
+  let btnCompleted = false;
 
   const IsJsonString = (str) => {
     try {
@@ -70,7 +55,7 @@ function App(){
             if (jsonIn != false) {
               if (Array.isArray(jsonIn)) {
                 let temp = [...jsonIn];
-                setTodos(temp);
+                updateState(temp);
               }
             }
           }
@@ -80,37 +65,64 @@ function App(){
     }
   }
 
+  const buildElement = () => {
+    const element = document.getElementById('completed');
+    return {target:{checked:element.checked}};
+  }
+  const updateState = tempArray => {
+    tempArray.sort((a, b) => b.priority - a.priority);
+    if (todoJson != null) todoJson.value = JSON.stringify(tempArray);
+    let temp = [...tempArray];
+    temp = filterHidden(buildElement());
+  }
   const addTodo = text => {
-    let temp = [...todos, {text, isCompleted: false, priority: 1}];
-    setTodos(temp);
+    let unfilteredTodos = IsJsonString(todoJson.value);
+    let temp = [...unfilteredTodos, {text, isCompleted: false, priority: 1}];
+    updateState(temp);
   }
   const removeTodo = index => {
-    let temp = [...todos];    
+    let unfilteredTodos = IsJsonString(todoJson.value);
+    let temp = [...unfilteredTodos];    
     temp.splice(index, 1);
-    setTodos(temp);
+    updateState(temp);
   }
-  const completeTodo = index => {
+  const completeTodo = (e, index) => {
     document.getElementById(`cbx${index}`).checked = false;
-    let temp = [...todos];
+    let unfilteredTodos = IsJsonString(todoJson.value);
+    let temp = [...unfilteredTodos];
     temp[index].isCompleted = !temp[index].isCompleted;
     if (temp[index].isCompleted) {
       temp[index].priority = 0;
     } else {
       temp[index].priority = 1;
     }
-    setTodos(temp);
+    updateState(temp);
   }
   const changePriotiy = index => {
-    let temp = [...todos];
+    let unfilteredTodos = IsJsonString(todoJson.value);
+    let temp = [...unfilteredTodos];
     if (!temp[index].isCompleted) {
       temp[index].priority = temp[index].priority + 1;
       if (temp[index].priority > 3) temp[index].priority = 1;
     }
-    setTodos(temp);
+    updateState(temp);
   }
-  todos.sort((a, b) => b.priority - a.priority);
-  if (todoJson != null) todoJson.value = JSON.stringify(todos);
-
+  const filterHidden = (e) => {
+    const filterItems = (tempArray, completed) =>
+    {
+      if (!completed) {
+        return tempArray.filter(todo => todo.isCompleted === false);
+      } else {
+        return tempArray;
+      }
+    }
+    let unfilteredTodos = IsJsonString(todoJson.value);
+    let tempArray = [...unfilteredTodos];
+    btnCompleted = e.target.checked;
+    tempArray = filterItems(tempArray, btnCompleted);
+    setTodos(tempArray);
+  }
+  
   return(
     <>
       <div className="nav">
@@ -119,6 +131,14 @@ function App(){
           <button id="btnImport" type="button" className="btn-square" onClick={fileImport}>Import</button>
           <br/>
           <a download="todo.txt" id="downloadlink"><button id="btnExport" type="button" className="btn-square" onClick={fileExport}>Export</button></a>
+        </div>
+        <div className="navslider">
+          <label style={{marginTop: 10}}>Completed</label>
+          <br/>
+          <label className="switch">
+            <input id={'completed'} type="checkbox" onChange={(event, todos)=>{filterHidden(event)}}/>
+            <span className="slider round"></span>
+          </label>
         </div>
       </div>
       <div className="app">
