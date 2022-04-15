@@ -35,7 +35,7 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 ---------
 
 ## Files 
-- **/index.html** - Start-up file to be opened by browse 
+- **/index.html** - Start-up file to be opened by browser
 - **/todo.js** - Contains the React code to build the todo item
 - **/form.js** - Contains the React code to build the form to add new todo items
 - **/index.js** - Contains the React code to build the page, Render ReactDOM
