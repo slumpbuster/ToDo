@@ -1,0 +1,1 @@
+[{"text":"learn react","isCompleted":false,"priority":3},{"text":"build todo app","isCompleted":false,"priority":2},{"text":"meet friend for lunch","isCompleted":false,"priority":1},{"text":"Test","isCompleted":true,"priority":0}]

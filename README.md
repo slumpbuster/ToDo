@@ -35,13 +35,23 @@ This was done as an assignment in the MIT course - Full Stack Development with M
 ---------
 
 ## Files 
-- **/index.html** - Start-up file to be opened by browser
-- **/todo.js** - Contains the React code to build the todo item
-- **/form.js** - Contains the React code to build the form to add new todo items
-- **/index.js** - Contains the React code to build the page, Render ReactDOM
-- **/styles.css** - Stylesheet file that positions objects, controls text, colors, and layout
-- **/todo.txt** - Json Data for todo list
 - **/ToDo.png** - Screenshot for ReadMe
+- **/Standalone** - Standalone React App
+  - **/index.html** - Start-up file to be opened by browser
+  - **/index.js** - Contains the React code to build the page, Render ReactDOM
+  - **/form.js** - Contains the React code to build the form to add new todo items
+  - **/todo.js** - Contains the React code to build the todo item
+  - **/styles.css** - Stylesheet file that positions objects, controls text, colors, and layout
+  - **/todo.txt** - Json Data for todo list
+- **/Create-React-App** - React App
+  - **/public/index.html** - Start-up file to be opened by browser
+  - **/public/todo.txt** - Json Data for todo list
+  - **/src/App.css** - Stylesheet file that positions objects, controls text, colors, and layout
+  - **/src/App.js** - Contains the React code to build the stores items, the code to manage the inventory, the code to manage the shopping cart, and Render ReactDOM
+  - **/src/index.css** - Stylesheet file that positions objects, controls text, colors, and layo
+  - **/src/index.js** - Contains the ReactDom
+  - **/src/form.js** - Contains the React code to build the form to add new todo items
+  - **/src/todo.js** - Contains the React code to build the todo item
 
 ---------
 

@@ -1,5 +1,10 @@
+import React, { useState } from 'react';
+import './App.css';
+import TodoForm from './form'
+import Todo from './todo'
+
 function App(){
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos] = useState([]);
   const todoJson = document.getElementById('todoJson');
   let btnCompleted = false;
 
@@ -50,6 +55,7 @@ function App(){
           if(rawFile.status === 200 || rawFile.status == 0)
           {
             var allText = rawFile.responseText;
+            console.log(todoJson)
             todoJson.value = allText;
             let jsonIn = IsJsonString(allText);
             if (jsonIn != false) {
@@ -133,7 +139,7 @@ function App(){
           <a download="todo.txt" id="downloadlink"><button id="btnExport" type="button" className="btn-square" onClick={fileExport}>Export</button></a>
         </div>
         <div className="navslider">
-          <label style={{marginTop: 10}}>Completed</label>
+          <label htmlFor={'completed'} style={{marginTop: 10}}>Completed</label>
           <br/>
           <label className="switch">
             <input id={'completed'} type="checkbox" onChange={(event, todos)=>{filterHidden(event)}}/>
@@ -153,7 +159,4 @@ function App(){
   );
 }
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root')
-);
+export default App;
